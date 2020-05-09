@@ -1,0 +1,135 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "required": [
+        "PointOfInterest"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "PointOfInterest": {
+            "$id": "#/properties/PointOfInterest",
+            "type": "array",
+            "title": "The PointOfInterest schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "Cuisine": "Continental",
+                        "Haversine Distance": 335.06641557884603,
+                        "Delivery": "Y",
+                        "Price Point": "High",
+                        "Restaurant Name": "Restaurant 28",
+                        "Restaurant Address": "Restaurant 28 Address"
+                    },
+                    {
+                        "Delivery": "Y",
+                        "Haversine Distance": 446.01554806970523,
+                        "Price Point": "High",
+                        "Restaurant Name": "Restaurant 21",
+                        "Restaurant Address": "Restaurant 21 Address",
+                        "Cuisine": "Continental"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/PointOfInterest/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/PointOfInterest/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "Cuisine": "Continental",
+                                "Haversine Distance": 335.06641557884603,
+                                "Delivery": "Y",
+                                "Price Point": "High",
+                                "Restaurant Name": "Restaurant 28",
+                                "Restaurant Address": "Restaurant 28 Address"
+                            }
+                        ],
+                        "required": [
+                            "Restaurant Name",
+                            "Restaurant Address",
+                            "Haversine Distance",
+                            "Cuisine",
+                            "Delivery",
+                            "Price Point"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "Restaurant Name": {
+                                "$id": "#/properties/PointOfInterest/items/anyOf/0/properties/Restaurant Name",
+                                "type": "string",
+                                "title": "The Restaurant Name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Restaurant 28"
+                                ]
+                            },
+                            "Restaurant Address": {
+                                "$id": "#/properties/PointOfInterest/items/anyOf/0/properties/Restaurant Address",
+                                "type": "string",
+                                "title": "The Restaurant Address schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Restaurant 28 Address"
+                                ]
+                            },
+                            "Haversine Distance": {
+                                "$id": "#/properties/PointOfInterest/items/anyOf/0/properties/Haversine Distance",
+                                "type": "number",
+                                "title": "The Haversine Distance schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    335.06641557884603
+                                ]
+                            },
+                            "Cuisine": {
+                                "$id": "#/properties/PointOfInterest/items/anyOf/0/properties/Cuisine",
+                                "type": "string",
+                                "title": "The Cuisine schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Continental"
+                                ]
+                            },
+                            "Delivery": {
+                                "$id": "#/properties/PointOfInterest/items/anyOf/0/properties/Delivery",
+                                "type": "string",
+                                "title": "The Delivery schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Y"
+                                ]
+                            },
+                            "Price Point": {
+                                "$id": "#/properties/PointOfInterest/items/anyOf/0/properties/Price Point",
+                                "type": "string",
+                                "title": "The Price Point schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "High"
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
